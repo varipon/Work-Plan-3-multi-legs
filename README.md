@@ -2,7 +2,7 @@
 
 Work Plan 3. Biomechanical simulation of multi legs
 
-Task 3.1 : Equestrianism « https://youtu.be/bsjl0hNEH3w , https://varipon.com/index.php/work-plan-3/task-31/ »
+Task 3.1 : Equestrianism « https://varipon.com/index.php/work-plan-3/task-31/ »
 
 Task 3.2 : Leopard running « http://goo.gl/MYirCz »
 
