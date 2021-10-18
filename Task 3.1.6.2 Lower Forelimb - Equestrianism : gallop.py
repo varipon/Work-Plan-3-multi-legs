@@ -639,7 +639,7 @@ class LowerForelimb(Formula):
     #   Z = -Q*2
         Z = 0.0
 
-        if part == 'lowerforelimb-right':
+        if part == 'right-lowerforelimb':
             obj_joint = bpy.data.objects["joint.gold.a2a1.lowerforelimb-right"].copy()
         else:
             obj_joint = bpy.data.objects["joint.gold.a2a1.lowerforelimb-left"].copy()
@@ -751,7 +751,7 @@ def lowerforelimbs():
     move = 'equestrianism-gallop'
 
 # element
-    part = 'lowerforelimb-right'
+    part = 'right-lowerforelimb'
 
 # left or right
     helicity = 'right'
@@ -773,7 +773,7 @@ def lowerforelimbs():
     lowerforelimb_right.rig.rotation_euler = lowerforelimb_rot
 
 # element
-    part = 'lowerforelimb-left'
+    part = 'left-lowerforelimb'
 
 # left or right
     helicity = 'left'
