@@ -739,7 +739,7 @@ def upperforelimbs():
     P = 0.0
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-trot'
 
 # element
     part = 'right-upperforelimb'
