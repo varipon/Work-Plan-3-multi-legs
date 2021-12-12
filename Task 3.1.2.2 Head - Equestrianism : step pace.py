@@ -1016,7 +1016,7 @@ def head():
     P = (-0.377421/0.476741)*A
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-steppace'
 
 # element
     part = 'head'
@@ -1040,7 +1040,7 @@ def neck():
     P = 0
 
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-steppace'
 
 # neck element
     part = 'neck'
