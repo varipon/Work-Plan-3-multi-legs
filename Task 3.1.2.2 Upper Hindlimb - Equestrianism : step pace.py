@@ -739,7 +739,7 @@ def upperhindlimbs():
     P = ((-0.25* 0.6)/0.6)*A
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-steppace'
 
 # element
     part = 'right-upperhindlimb'
