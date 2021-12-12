@@ -4230,7 +4230,7 @@ def costa():
     P = (-1.20397/1.28082)*A
 
 # name
-    move = 'front-crawl'
+    move = 'equestrianism-walk'
 
 # element
     part = 'costa'
