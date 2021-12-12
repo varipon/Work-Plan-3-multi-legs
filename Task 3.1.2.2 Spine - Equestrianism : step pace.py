@@ -1098,7 +1098,7 @@ def costa():
     P = (-1.20397/1.28082)*A
 
 # name
-    move = 'front-crawl'
+    move = 'equestrianism-steppace'
 
 # element
     part = 'costa'
@@ -1122,7 +1122,7 @@ def spine():
     P = (-1.67629/1.71652)*A
     
 # name
-    move = 'equestrianism-gallop'
+    move = 'equestrianism-steppace'
 
 # element
     part = 'spine' 
