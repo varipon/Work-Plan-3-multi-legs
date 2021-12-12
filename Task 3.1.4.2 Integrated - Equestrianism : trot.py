@@ -4263,7 +4263,7 @@ def spine():
     P = (-1.656175/1.71652)*A
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'spine' 
