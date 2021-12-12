@@ -3871,7 +3871,7 @@ def lowerforelimbs():
     P = ((0.75*-0.35)/0.35)*A
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'right-lowerforelimb'
@@ -3907,7 +3907,7 @@ def upperforelimbs():
     P = 0.0
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'right-upperforelimb'
@@ -3956,7 +3956,7 @@ def shoulder():
     end = start+720
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
     
 # scale factor
     A = 0.512329
@@ -4011,7 +4011,7 @@ def head():
     P = (-0.327763/0.476741)*A
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'head'
@@ -4035,7 +4035,7 @@ def neck():
     P = 0
 
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # neck element
     part = 'neck'
@@ -4064,7 +4064,7 @@ def lowerhindlimbs():
     P = ((0.75*-0.35)/0.35)*A
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'right-lowerhindlimb'
@@ -4100,7 +4100,7 @@ def upperhindlimbs():
     P = 0.0
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'right-upperhindlimb'
@@ -4149,7 +4149,7 @@ def ilium():
     end = start+720
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
     
 # scale factor
     A = 0.512329
@@ -4206,7 +4206,7 @@ def tail():
     P = (-0.437499/0.7)*A
     
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'tail'
@@ -4230,7 +4230,7 @@ def costa():
     P = (-1.20397/1.28082)*A
 
 # name
-    move = 'front-crawl'
+    move = 'equestrianism-trot'
 
 # element
     part = 'costa'
@@ -4298,7 +4298,7 @@ def sacrum():
     P = 0
 
 # name
-    move = 'equestrianism-pace'
+    move = 'equestrianism-trot'
 
 # element
     part = 'sacrum'
