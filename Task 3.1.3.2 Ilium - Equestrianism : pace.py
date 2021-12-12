@@ -857,7 +857,7 @@ def ilium():
     end = start+720
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-pace'
     
 # scale factor
     A = 0.512329
