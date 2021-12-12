@@ -858,7 +858,7 @@ def shoulder():
     end = start+720
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-steppace'
     
 # scale factor
     A = 0.512329
