@@ -748,7 +748,7 @@ def lowerforelimbs():
     P = ((0.75*-0.35)/0.35)*A
     
 # name
-    move = 'equestrianism-canter'
+    move = 'equestrianism-steppace'
 
 # element
     part = 'right-lowerforelimb'
