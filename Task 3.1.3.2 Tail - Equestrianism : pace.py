@@ -748,7 +748,7 @@ def tail():
     P = (-0.437499/0.7)*A
      
 # name
-    move = 'equestrianism-gallop'
+    move = 'equestrianism-pace'
 
 # element
     part = 'tail'
