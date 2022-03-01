@@ -3844,7 +3844,7 @@ class Equestrian(Sacrum):
         y[2] = mathutils.Euler((-A, (-0.68257/1.7035)*A, 0.0), 'XYZ')
         print ("y2 =", y[2])
 
-        o[1] = mathutils.Euler(((-16.428/1.7035)*A, -A, 0.0), 'XYZ')
+        o[1] = mathutils.Euler(((-10.0644/1.7035)*A, -A, 0.0), 'XYZ')
         print ("o1 =", o[1])
         
     def configLink(self, A, J, helicity, rig, move, part):
@@ -3983,7 +3983,7 @@ class Jump(Sacrum):
         y[1] = mathutils.Euler((-A, -A, 0.0), 'XYZ')
         print ("y1 =", y[1])
         
-        y[2] = mathutils.Euler((-A, (10.8/10.4973)*A, 0.0), 'XYZ')
+        y[2] = mathutils.Euler((-A, ((-10.4973+0.8)/10.4973)*A, 0.0), 'XYZ')
         print ("y2 =", y[2])
 
         o[1] = mathutils.Euler(((-10.8/10.4973)*A, -A, 0.0), 'XYZ')
@@ -3994,7 +3994,7 @@ class Jump(Sacrum):
         bpy.ops.object.mode_set(mode='OBJECT')
     
         Q = (0.18648+0.146446)*A
-        Z = Q*37
+        Z = Q*50
 #        Z = 0.0
 
         obj_joint = bpy.data.objects["joint.gold.jump"].copy()
@@ -4078,7 +4078,7 @@ def lowerforelimbs():
     A = 0.35
 
 # pivot factor
-    P = -((0.25*0.35)/0.35)*A
+    P = 0
     
 # name
     move = 'equestrianism-jump'
@@ -4184,13 +4184,13 @@ def shoulder():
     upperforelimb = upperforelimb_right
 
     upperforelimb_loc = ((-1.2785/0.512329)*A, (-3.58805/0.512329)*A, (-3.1431/0.512329)*A)
-    upperforelimb_rot = mathutils.Euler((math.radians(86.719), math.radians(132.925), math.radians(-181.263)), 'XYZ')
+    upperforelimb_rot = mathutils.Euler((math.radians(89.1782), math.radians(132.883), math.radians(-179.108)), 'XYZ')
 
     global shoulder_right
     shoulder_right = RightShoulder(P, A, move, part, helicity, start, end,
         upperforelimb_loc, upperforelimb_rot, upperforelimb)
  
-    start = 136
+    start = 138
     end = start+720
 
 # element
@@ -4205,7 +4205,7 @@ def shoulder():
     upperforelimb = upperforelimb_left
 
     upperforelimb_loc = ((-1.2591/0.512329)*A, (2.54616/0.512329)*A, (-3.14816/0.512329)*A)
-    upperforelimb_rot = mathutils.Euler((math.radians(-94.3881), math.radians(46.9439), math.radians(-1.34697)), 'XYZ')
+    upperforelimb_rot = mathutils.Euler((math.radians(-86.9347), math.radians(47.054), math.radians(4.01929)), 'XYZ')
 
     global shoulder_left
     shoulder_left = LeftShoulder(P, A, move, part, helicity, start, end,
@@ -4271,7 +4271,7 @@ def lowerhindlimbs():
     A = 0.35
 
 # pivot factor
-    P = -((0.5*0.35)/0.35)*A
+    P = 0
     
 # name
     move = 'equestrianism-jump'
@@ -4378,7 +4378,7 @@ def ilium():
     upperhindlimb = upperhindlimb_left
 
     upperhindlimb_loc = ((3.3105/0.512329)*A, (-4.330338/0.512329)*A, (1.124181/0.512329)*A)
-    upperhindlimb_rot = mathutils.Euler((math.radians(69.7413), math.radians(86.6714), math.radians(882.41)), 'XYZ')
+    upperhindlimb_rot = mathutils.Euler((math.radians(68.8057), math.radians(86.6538), math.radians(881.712)), 'XYZ')
 
     global ilium_left
     ilium_left = LeftIlium(P, A, move, part, helicity, start, end,
@@ -4394,8 +4394,8 @@ def ilium():
 
     upperhindlimb = upperhindlimb_right
 
-    upperhindlimb_loc = ((3.260239/0.512329)*A, (3.473254/0.512329)*A, (1.18485/0.512329)*A)
-    upperhindlimb_rot = mathutils.Euler((math.radians(-265.435), math.radians(86.5741), math.radians(185.478)), 'XYZ')
+    upperhindlimb_loc = ((3.2603/0.512329)*A, (3.47334/0.512329)*A, (1.18485/0.512329)*A)
+    upperhindlimb_rot = mathutils.Euler((math.radians(-269.513), math.radians(86.5697), math.radians(182.412)), 'XYZ')
 
     global ilium_right
     ilium_right = RightIlium(P, A, move, part, helicity, start, end,
@@ -4459,7 +4459,7 @@ def costa():
     P = (-1.20397/1.28082)*A
 
 # name
-    move = 'front-crawl'
+    move = 'equestrianism-jump'
 
 # element
     part = 'costa'
@@ -4511,8 +4511,8 @@ def spine():
     costa_loc = ((-2.62224/1.71652)*A, (-0.810857/1.71652)*A, (1.28082/1.71652)*A)
     costa_rot = mathutils.Euler((math.radians(-270), math.radians(0), math.radians(315)), 'XYZ')
 
-    sacrum_loc = ((8.69769/1.71652)*A, (-15.7996/1.71652)*A, (-0.532229/1.71652)*A)
-    sacrum_rot = mathutils.Euler((math.radians(90), math.radians(-180), math.radians(45.166)), 'XYZ')
+    sacrum_loc = ((8.69769/1.71652)*A, (-15.7996/1.71652)*A, (0.703663/1.71652)*A)
+    sacrum_rot = mathutils.Euler((math.radians(90), math.radians(0), math.radians(45.166)), 'XYZ')
 
     global spine
     spine = Spine(P, A, move, part, helicity, start, end,
@@ -4553,11 +4553,11 @@ def sacrum():
     global ilium_left
     global ilium_right
 
-    tail_loc = ((-2.763696/0.617946)*A, (-0.525921/0.617946)*A, (6.135602/0.617946)*A)
-    tail_rot = mathutils.Euler((math.radians(-90), math.radians(-45.1788), math.radians(180)), 'XYZ')
+    tail_loc = ((2.763717/0.617946)*A, (-0.709972/0.617946)*A, (6.135593/0.617946)*A)
+    tail_rot = mathutils.Euler((math.radians(90), math.radians(-135.179), math.radians(180)), 'XYZ')
 
-    ilium_loc = ((-0.446235/0.617946)*A, (-0.022052/0.617946)*A, (-0.83039/0.617946)*A)
-    ilium_rot = mathutils.Euler((math.radians(180), math.radians(-153), math.radians(180)), 'XYZ')
+    ilium_loc = ((-0.446235/0.617946)*A, (-1.21384/0.617946)*A, (-0.83039/0.617946)*A)
+    ilium_rot = mathutils.Euler((math.radians(180), math.radians(-153), math.radians(0)), 'XYZ')
 
     global sacrum
     sacrum = Sacrum(P, A, move, part, helicity, start, end,
