@@ -3802,9 +3802,9 @@ class Wing(ForeWing):
     
         w[4] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -0.375753/0.069978* A * H), 'XYZ')
         print ("w4 =", w[4])
-        w[5] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -2.92149/0.034172* A * H), 'XYZ')
+        w[5] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -2.72923/0.034172* A * H), 'XYZ')
         print ("w5 =", w[5])
-        w[6] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -6.08793/0.034172* A * H), 'XYZ')
+        w[6] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -5.89568/0.034172* A * H), 'XYZ')
         print ("w6 =", w[6])
 
     def constructMovement(self, J, helicity, amt, rig, a, b, y, o, w):
