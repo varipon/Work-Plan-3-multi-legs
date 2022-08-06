@@ -5811,7 +5811,7 @@ def middlelegs():
     global middleankle_left
     middleankle = middleankle_left
 
-    middleankle_loc = ((2.2029/0.049732)*A, (-0.713449/0.049732)*A, (-0.055864/0.049732)*A)
+    middleankle_loc = ((2.25262/0.049732)*A, (-0.663706/0.049732)*A, (-0.055865/0.049732)*A)
     middleankle_rot = mathutils.Euler((math.radians(-30.311), math.radians(-10.1309), math.radians(-33.553)), 'XYZ')
 
     global middleleg_left
@@ -5829,7 +5829,7 @@ def middlelegs():
     global middleankle_right
     middleankle = middleankle_right
 
-    middleankle_loc = ((2.2029/0.049732)*A, (-0.713449/0.049732)*A, (0.055864/0.049732)*A)
+    middleankle_loc = ((2.25262/0.049732)*A, (-0.663706/0.049732)*A, (0.055865/0.049732)*A)
     middleankle_rot = mathutils.Euler((math.radians(30.311), math.radians(10.1309), math.radians(-33.553)), 'XYZ')
 
     global middleleg_right
@@ -5992,7 +5992,7 @@ def hindlegs():
     global hindankle_left
     hindankle = hindankle_left
 
-    hindankle_loc = ((2.93689/0.064893)*A, (-2.09319/0.064893)*A, (-0.07164/0.064893)*A)
+    hindankle_loc = ((3.00174/0.064893)*A, (-2.02812/0.064893)*A, (-0.071623/0.064893)*A)
     hindankle_rot = mathutils.Euler((math.radians(-30.1088), math.radians(-9.73026), math.radians(-73.318)), 'XYZ')
 
     global hindleg_left
@@ -6010,7 +6010,7 @@ def hindlegs():
     global hindankle_right
     hindankle = hindankle_right
 
-    hindankle_loc = ((2.93689/0.064893)*A, (-2.09319/0.064893)*A, (0.07164/0.064893)*A)
+    hindankle_loc = ((3.00174/0.064893)*A, (-2.02812/0.064893)*A, (0.071623/0.064893)*A)
     hindankle_rot = mathutils.Euler((math.radians(30.1088), math.radians(9.73026), math.radians(-73.318)), 'XYZ')
 
     global hindleg_right
