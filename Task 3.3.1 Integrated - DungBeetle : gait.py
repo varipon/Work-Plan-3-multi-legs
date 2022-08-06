@@ -518,7 +518,7 @@ class Formula:
                 cns1.volume = 'NO_VOLUME'
 
                 bpy.ops.object.mode_set(mode='OBJECT')
-        
+
         
 class Ankle(Formula):
 
@@ -585,10 +585,10 @@ class Ankle(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.2, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.2, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -742,7 +742,7 @@ class Ankle(Formula):
     #   Z = -Q*2
         Z = 0.0
 
-        obj_joint = bpy.data.objects["joint.gold.000"].copy()
+        obj_joint = bpy.data.objects["joint.gold.ankle.a2a1"].copy()
         obj_joint.location = (0.0, 0.0, -Q*3+Z)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "a2a1.mesh." + move + '.' + part +'.' + helicity
@@ -844,10 +844,10 @@ class ForeLeg(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(1.25*self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(1.25*self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -872,34 +872,34 @@ class ForeLeg(Formula):
         y[1] = mathutils.Euler((-A, -A, 0.0), 'XYZ')
         print ("y1 =", y[1])
 
-        b[2] = mathutils.Euler(((1.18546/0.104289)*A, (-1.01932/0.104289)*A, 0.0), 'XYZ')
+        b[2] = mathutils.Euler(((1.13339/0.052145)*A, (-1.0715/0.052145)*A, 0.0), 'XYZ')
         print ("b2 =", b[2])
 
-        b[3] = mathutils.Euler(((1.0841/0.104289)*A, (-1.23257/0.104289)*A, 0.0), 'XYZ')
+        b[3] = mathutils.Euler(((1.13624/0.052145)*A, (-1.18043/0.052145)*A, 0.0), 'XYZ')
         print ("b3 =", b[3])
         
-        b[4] = mathutils.Euler(((2.47931/0.104289)*A, (-0.563768/0.104289)*A, 0.0), 'XYZ')
+        b[4] = mathutils.Euler(((2.53145/0.052145)*A, (-0.511624/0.052145)*A, 0.0), 'XYZ')
         print ("b4 =", b[4])
 
-        y[2] = mathutils.Euler(((0.977026/0.104289)*A, (-1.22797/0.104289)*A, 0.0), 'XYZ')
+        y[2] = mathutils.Euler(((1.02917/0.052145)*A, (-1.17583/0.052145)*A, 0.0), 'XYZ')
         print ("y2 =", y[2])
 
-        y[3] = mathutils.Euler(((1.10854/0.104289)*A, (-1.17027/0.104289)*A, 0.0), 'XYZ')
+        y[3] = mathutils.Euler(((1.16068/0.052145)*A, (-1.11813/0.052145)*A, 0.0), 'XYZ')
         print ("y3 =", y[3])
 
-        o[2] = mathutils.Euler(((0.957763/0.104289)*A, (-1.18491/0.104289)*A, 0.0), 'XYZ')
+        o[2] = mathutils.Euler(((1.00991/0.052145)*A, (-1.13277/0.052145)*A, 0.0), 'XYZ')
         print ("o2 =", o[2])
         
-        o[3] = mathutils.Euler(((0.984675/0.104289)*A, (-1.17297/0.104289)*A, 0.0), 'XYZ')
+        o[3] = mathutils.Euler(((1.03682/0.052145)*A, (-1.12083/0.052145)*A, 0.0), 'XYZ')
         print ("o3 =", o[3])
        
-        o[4] = mathutils.Euler(((2.32259/0.104289)*A, (-0.430947/0.104289)*A, 0.0), 'XYZ')
+        o[4] = mathutils.Euler(((2.37473/0.052145)*A, (-0.378803/0.052145)*A, 0.0), 'XYZ')
         print ("o4 =", o[4])
         
-        y[4] = mathutils.Euler(((2.34425/0.104289)*A, (-0.467808/0.104289)*A, 0.0), 'XYZ')
+        y[4] = mathutils.Euler(((2.39639/0.052145)*A, (-0.415664/0.052145)*A, 0.0), 'XYZ')
         print ("y4 =", y[4])
         
-        y[5] = mathutils.Euler(((2.41536/0.104289)*A, (-0.425729/0.104289)*A, 0.0), 'XYZ')
+        y[5] = mathutils.Euler(((2.4675/0.052145)*A, (-0.373585/0.052145)*A, 0.0), 'XYZ')
         print ("y5 =", y[5])
 
         
@@ -1048,10 +1048,10 @@ class ForeWing(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A * 1, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A * 0.9, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A * 1, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A * 0.9, self.J, self.helicity, self.rig, self.move, self.part)
     
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, helicity, a, b, y, o, w):
@@ -1105,8 +1105,8 @@ class ForeWing(Formula):
         w[1] = mathutils.Euler((-A , y[4].y, -B*2 * H), 'XYZ')
         print ("w1 =", w[1])
 
-        w[2] = mathutils.Euler((-0.177343/0.034172*A, -0.312067/0.034172*A, -0.235315/0.034172*A * H), 'XYZ')
-        w[3] = mathutils.Euler((-0.177343/0.034172*A, -0.312067/0.034172*A, -0.15494/0.034172*A * H), 'XYZ')
+        w[2] = mathutils.Euler((-0.177343/0.034172*A, -0.312067/0.034172*A, -0.15494/0.034172*A * H), 'XYZ')
+        w[3] = mathutils.Euler((-0.177343/0.034172*A, -0.312067/0.034172*A, -0.235315/0.034172*A * H), 'XYZ')
         print ("w2 =", w[2])
         print ("w3 =", w[3])
     
@@ -1516,13 +1516,13 @@ class ForeWing(Formula):
                 bpy.data.collections['link'].objects.link(obj_joint)
                 
 
-        obj_joint = bpy.data.objects["joint.gold.y3y4.001"].copy()
+        obj_joint = bpy.data.objects["joint.gold.y3y4.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "y3y4.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
 
-        obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.001"].copy()
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_y3y4.x.mesh." + move + '.' + part +'.' + helicity
@@ -1534,19 +1534,19 @@ class ForeWing(Formula):
         obj_joint.name = "g_y3y4.z.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
         
-        obj_joint = bpy.data.objects["joint.green.g_1.y.001"].copy()
+        obj_joint = bpy.data.objects["joint.green.g_1.y.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_1.y.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
         
-        obj_joint = bpy.data.objects["joint.blue.g_2.x.wing"].copy()
+        obj_joint = bpy.data.objects["joint.blue.g_2.x.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
         
-        obj_joint = bpy.data.objects["joint.silver.g_3.z.wing"].copy()
+        obj_joint = bpy.data.objects["joint.silver.g_3.z.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_3.z.mesh." + move + '.' + part +'.' + helicity
@@ -1964,6 +1964,62 @@ class Neck(Ankle):
 
         disciple.rig.rotation_euler = disciple_rot
 
+    def configLink(self, A, J, helicity, rig, move, part):
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+    
+        Q = (0.18648+0.146446)*A
+    #   Z = -Q*2
+        Z = 0.0
+
+        obj_joint = bpy.data.objects["joint.gold.neck.a2a1"].copy()
+        obj_joint.location = (0.0, 0.0, -Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2a1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.silver.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y1a2.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.copper.y1o1"].copy()
+        obj_joint.location = (0.0, 0.0, +Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y1o1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.blue.001"].copy()
+        obj_joint.location = (0.0, 0.0, -Q*2+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a1b1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        n = 1
+
+        # Pattern 2 of by
+        obj_joint = bpy.data.objects["joint.green.001"].copy()
+        obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "b"+str(n)+"y"+str(n)+".mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        # Pattern 2 of yy
+        obj_joint = bpy.data.objects["joint.gold.00"+str(1 + (n+1) % 2)].copy()
+        obj_joint.location = (0.0, 0.0, +Q*(1 - (n % 2))*2+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y"+str(n)+"y"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        for ob in data.collections['link'].objects:
+            if "mesh" in ob.name:
+                ob.select_set(state = True, view_layer = None)
+
+        bpy.ops.object.make_single_user(type='SELECTED_OBJECTS', object=True, obdata=True, material=True, animation=True)
+        bpy.context.scene.cursor.location = (0.0, 0.0, 0.0)
+        bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
+        
 
 class RightShoulder(Formula):
 
@@ -2037,10 +2093,10 @@ class RightShoulder(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.5, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.5, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -2321,10 +2377,10 @@ class LeftShoulder(RightShoulder):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.5, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.5, self.J, self.helicity, self.rig, self.move, self.part)
 
     def configMovement(self, P, A, J, a, b, y, o):
 
@@ -2492,10 +2548,10 @@ class Costa(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(1.25*self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.2, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(1.25*self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.2, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -3001,10 +3057,10 @@ class MiddleLeg(ForeLeg):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(1.25*self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(1.25*self.A*0.8, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -3029,34 +3085,34 @@ class MiddleLeg(ForeLeg):
         y[1] = mathutils.Euler((-A, -A, 0.0), 'XYZ')
         print ("y1 =", y[1])
 
-        b[2] = mathutils.Euler(((1.20183/0.099465)*A, (-1.03789/0.099465)*A, 0.0), 'XYZ')
+        b[2] = mathutils.Euler(((1.15217/0.049732)*A, (-1.08766/0.049732)*A, 0.0), 'XYZ')
         print ("b2 =", b[2])
 
-        b[3] = mathutils.Euler(((1.08955/0.099465)*A, (-1.256/0.099465)*A, 0.0), 'XYZ')
+        b[3] = mathutils.Euler(((1.13928/0.049732)*A, (-1.20627/0.049732)*A, 0.0), 'XYZ')
         print ("b3 =", b[3])
         
-        b[4] = mathutils.Euler(((2.32143/0.099465)*A, (-0.911803/0.099465)*A, 0.0), 'XYZ')
+        b[4] = mathutils.Euler(((2.37116/0.049732)*A, (-0.862071/0.049732)*A, 0.0), 'XYZ')
         print ("b4 =", b[4])
 
-        y[2] = mathutils.Euler(((1.00304/0.099465)*A, (-1.23689/0.099465)*A, 0.0), 'XYZ')
+        y[2] = mathutils.Euler(((1.05277/0.049732)*A, (-1.18716/0.049732)*A, 0.0), 'XYZ')
         print ("y2 =", y[2])
 
-        y[3] = mathutils.Euler(((1.11839/0.099465)*A, (-1.20879/0.099465)*A, 0.0), 'XYZ')
+        y[3] = mathutils.Euler(((1.16812/0.049732)*A, (-1.15906/0.049732)*A, 0.0), 'XYZ')
         print ("y3 =", y[3])
 
-        o[2] = mathutils.Euler(((0.99354/0.099465)*A, (-1.19907/0.099465)*A, 0.0), 'XYZ')
+        o[2] = mathutils.Euler(((1.04327/0.049732)*A, (-1.14934/0.049732)*A, 0.0), 'XYZ')
         print ("o2 =", o[2])
         
-        o[3] = mathutils.Euler(((1.01716/0.099465)*A, (-1.19321/0.099465)*A, 0.0), 'XYZ')
+        o[3] = mathutils.Euler(((1.06689/0.049732)*A, (-1.14348/0.049732)*A, 0.0), 'XYZ')
         print ("o3 =", o[3])
-       
-        o[4] = mathutils.Euler(((2.21291/0.099465)*A, (-0.781173/0.099465)*A, 0.0), 'XYZ')
+
+        o[4] = mathutils.Euler(((2.26264/0.049732)*A, (-0.73144/0.049732)*A, 0.0), 'XYZ')
         print ("o4 =", o[4])
         
-        y[4] = mathutils.Euler(((2.22525/0.099465)*A, (-0.814291/0.099465)*A, 0.0), 'XYZ')
+        y[4] = mathutils.Euler(((2.27498/0.049732)*A, (-0.764558/0.049732)*A, 0.0), 'XYZ')
         print ("y4 =", y[4])
         
-        y[5] = mathutils.Euler(((2.28918/0.099465)*A, (-0.790242/0.099465)*A, 0.0), 'XYZ')
+        y[5] = mathutils.Euler(((2.33891/0.049732)*A, (-0.74051/0.049732)*A, 0.0), 'XYZ')
         print ("y5 =", y[5])
 
     # Parent set disciple to master
@@ -3162,6 +3218,149 @@ class MiddleWing(ForeWing):
         w[5] = mathutils.Euler((-0.21152/0.068344*A, -0.617642/0.068344*A, -1.08598/0.068344* A * H), 'XYZ')
         print ("w5 =", w[5])
         
+    def configLink(self, A, J, helicity, rig, move, part):
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        Q = (0.18648+0.146446)*A
+    #   Z = -Q*2
+        Z = 0.0
+#        Z = Q*17
+
+#        obj_joint = bpy.data.objects["joint.gold.000"].copy()
+
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.gold.middlewing.a2a1.L"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.gold.middlewing.a2a1.R"].copy()
+
+        obj_joint.location = (0.0, 0.0, -Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2a1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.silver.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y1a2.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.copper.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2o1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.blue.001"].copy()
+        obj_joint.location = (0.0, 0.0, -Q*2+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a1b1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+
+        for n in range(1, J - 2):
+
+            # Pattern 2 of by
+            obj_joint = bpy.data.objects["joint.green.001"].copy()
+            obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+            obj_joint.scale = (A, A, A)
+            obj_joint.name = "b"+str(n)+"y"+str(n)+".mesh." + move + '.' + part +'.' + helicity
+            bpy.data.collections['link'].objects.link(obj_joint)
+
+            if n <= (J-4):
+
+                # Pattern 1 of ob
+                obj_joint = bpy.data.objects["joint.blue.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q*2 + Q*(n % 2)*6 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "o"+str(n)+"b"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+                # Pattern 2 of yy
+                obj_joint = bpy.data.objects["joint.gold.00"+str(1 + (n+1) % 2)].copy()
+                obj_joint.location = (0.0, 0.0, +Q*(1 - (n % 2))*2+Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n)+"y"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+            if n <= (J-5):
+
+                # Pattern 2 of yo
+                obj_joint = bpy.data.objects["joint.copper.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n+1)+"o"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+                
+
+        obj_joint = bpy.data.objects["joint.gold.y3y4.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y3y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.z.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.green.g_1.y.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_1.y.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.blue.g_2.x.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.silver.g_3.z.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_3.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        for ob in data.collections['link'].objects:
+            if "mesh" in ob.name:
+                ob.select_set(state = True, view_layer = None)
+
+        bpy.ops.object.make_single_user(type='SELECTED_OBJECTS', object=True, obdata=True, material=True, animation=True)
+        bpy.context.scene.cursor.location = (0.0, 0.0, 0.0)
+        bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
+        
         
 class HindLeg(MiddleLeg):
 
@@ -3190,34 +3389,34 @@ class HindLeg(MiddleLeg):
         y[1] = mathutils.Euler((-A, -A, 0.0), 'XYZ')
         print ("y1 =", y[1])
 
-        b[2] = mathutils.Euler(((1.56821/0.129787)*A, (-1.35429/0.129787)*A, 0.0), 'XYZ')
+        b[2] = mathutils.Euler(((1.50341/0.064893)*A, (-1.41923/0.064893)*A, 0.0), 'XYZ')
         print ("b2 =", b[2])
 
-        b[3] = mathutils.Euler(((1.37926/0.129787)*A, (-1.70562/0.129787)*A, 0.0), 'XYZ')
+        b[3] = mathutils.Euler(((1.44415/0.064893)*A, (-1.64073/0.064893)*A, 0.0), 'XYZ')
         print ("b3 =", b[3])
         
-        b[4] = mathutils.Euler(((2.88966/0.129787)*A, (-2.39111/0.129787)*A, 0.0), 'XYZ')
+        b[4] = mathutils.Euler(((2.95455/0.064893)*A, (-2.32622/0.064893)*A, 0.0), 'XYZ')
         print ("b4 =", b[4])
 
-        y[2] = mathutils.Euler(((1.30882/0.129787)*A, (-1.61396/0.129787)*A, 0.0), 'XYZ')
+        y[2] = mathutils.Euler(((1.37371/0.064893)*A, (-1.54907/0.064893)*A, 0.0), 'XYZ')
         print ("y2 =", y[2])
 
-        y[3] = mathutils.Euler(((1.44769/0.129787)*A, (-1.68262/0.129787)*A, 0.0), 'XYZ')
+        y[3] = mathutils.Euler(((1.51258/0.064893)*A, (-1.61773/0.064893)*A, 0.0), 'XYZ')
         print ("y3 =", y[3])
 
-        o[2] = mathutils.Euler(((1.33104/0.129787)*A, (-1.56819/0.129787)*A, 0.0), 'XYZ')
+        o[2] = mathutils.Euler(((1.39593/0.064893)*A, (-1.5033/0.064893)*A, 0.0), 'XYZ')
         print ("o2 =", o[2])
         
-        o[3] = mathutils.Euler(((1.35957/0.129787)*A, (-1.58214/0.129787)*A, 0.0), 'XYZ')
+        o[3] = mathutils.Euler(((1.42446/0.064893)*A, (-1.51725/0.064893)*A, 0.0), 'XYZ')
         print ("o3 =", o[3])
        
-        o[4] = mathutils.Euler(((2.89075/0.129787)*A, (-2.16952/0.129787)*A, 0.0), 'XYZ')
+        o[4] = mathutils.Euler(((2.95564/0.064893)*A, (-2.10463/0.064893)*A, 0.0), 'XYZ')
         print ("o4 =", o[4])
         
-        y[4] = mathutils.Euler(((2.87531/0.129787)*A, (-2.21297/0.129787)*A, 0.0), 'XYZ')
+        y[4] = mathutils.Euler(((2.9402/0.064893)*A, (-2.14808/0.064893)*A, 0.0), 'XYZ')
         print ("y4 =", y[4])
         
-        y[5] = mathutils.Euler(((2.95938/0.129787)*A, (-2.24256/0.129787)*A, 0.0), 'XYZ')
+        y[5] = mathutils.Euler(((3.02427/0.064893)*A, (-2.17767/0.064893)*A, 0.0), 'XYZ')
         print ("y5 =", y[5])
         
         
@@ -3285,6 +3484,867 @@ class HindWing(ForeWing):
         print ("w4 =", w[4])
         w[5] = mathutils.Euler((-0.128652/0.027337*A, -0.249656/0.027337*A, -0.490245/0.027337* A * H), 'XYZ')
         print ("w5 =", w[5])
+        
+    def configLink(self, A, J, helicity, rig, move, part):
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        Q = (0.18648+0.146446)*A
+    #   Z = -Q*2
+        Z = 0.0
+#        Z = Q*17
+
+#        obj_joint = bpy.data.objects["joint.gold.000"].copy()
+
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.gold.hindwing.a2a1.L"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.gold.hindwing.a2a1.R"].copy()
+
+        obj_joint.location = (0.0, 0.0, -Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2a1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.silver.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y1a2.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.copper.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2o1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.blue.001"].copy()
+        obj_joint.location = (0.0, 0.0, -Q*2+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a1b1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+
+        for n in range(1, J - 2):
+
+            # Pattern 2 of by
+            obj_joint = bpy.data.objects["joint.green.001"].copy()
+            obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+            obj_joint.scale = (A, A, A)
+            obj_joint.name = "b"+str(n)+"y"+str(n)+".mesh." + move + '.' + part +'.' + helicity
+            bpy.data.collections['link'].objects.link(obj_joint)
+
+            if n <= (J-4):
+
+                # Pattern 1 of ob
+                obj_joint = bpy.data.objects["joint.blue.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q*2 + Q*(n % 2)*6 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "o"+str(n)+"b"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+                # Pattern 2 of yy
+                obj_joint = bpy.data.objects["joint.gold.00"+str(1 + (n+1) % 2)].copy()
+                obj_joint.location = (0.0, 0.0, +Q*(1 - (n % 2))*2+Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n)+"y"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+            if n <= (J-5):
+
+                # Pattern 2 of yo
+                obj_joint = bpy.data.objects["joint.copper.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n+1)+"o"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+                
+
+        obj_joint = bpy.data.objects["joint.gold.y3y4.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y3y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.z.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.green.g_1.y.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_1.y.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.blue.g_2.x.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.silver.g_3.z.forewing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_3.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        for ob in data.collections['link'].objects:
+            if "mesh" in ob.name:
+                ob.select_set(state = True, view_layer = None)
+
+        bpy.ops.object.make_single_user(type='SELECTED_OBJECTS', object=True, obdata=True, material=True, animation=True)
+        bpy.context.scene.cursor.location = (0.0, 0.0, 0.0)
+        bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
+        
+        
+class Wing(ForeWing):
+    
+    J = 6 #joint number
+    
+    # Overriding
+    def __init__(self, P, A, move, part, helicity, start, end):
+
+        global interval
+        global frame_start
+        global frame_end
+
+        self.interval = interval
+        self.frame_start = frame_start
+        self.frame_end = frame_end
+
+        # pivot factor
+        self.P = P
+
+        # scale factor
+        self.A = A 
+
+        # name
+        self.move = move
+
+        # element
+        self.part = part
+
+        # element helicity
+        self.helicity = helicity
+
+        self.start = start
+        self.end = end
+
+        # Create armature and object
+        self.amt = bpy.data.armatures.new(move + '.' + part + '.' + helicity + '.data')
+        self.rig = bpy.data.objects.new(move + '.' + part + '.' + helicity, self.amt)
+
+        # Joints
+        self.a = [0 for i in range(4)] # Joint α
+        self.b = [0 for i in range(self.J)] # Joint β
+        self.y = [0 for i in range(self.J)] # Joint γ
+        self.o = [0 for i in range(self.J)] # Joint δ
+        self.w = [0 for i in range(self.J+1)] # Joint ω
+
+        # Configuration Movement
+        self.configMovement(self.P, self.A, self.J, self.helicity, self.a, self.b, self.y, self.o, self.w)
+
+        # Construction Movement
+        self.constructMovement(self.J, self.helicity, self.amt, self.rig, self.a, self.b, self.y, self.o, self.w)
+ 
+        # Construction Rotation
+        self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
+
+        # Configuration Linkage
+        self.configLink(self.A * 1, self.J, self.helicity, self.rig, self.move, self.part)
+
+        # Construction Linkage
+        self.constructLink(self.A * 1, self.J, self.helicity, self.rig, self.move, self.part)
+    
+    # Overriding Configuration Movement
+    def configMovement(self, P, A, J, helicity, a, b, y, o, w):
+
+        mat_a = [0 for i in range(4)] # Joint α matrix
+        mat_b = [0 for i in range(self.J)] # Joint β matrix
+        mat_y = [0 for i in range(self.J)] # Joint γ matrix
+        mat_o = [0 for i in range(self.J)] # Joint δ matrix
+
+        a[1] = mathutils.Euler((P, A, 0), 'XYZ')
+        print ("a1 =", a[1])
+
+        a[2] = mathutils.Euler((A, -A, 0), 'XYZ')
+        print ("a2 =", a[2])
+
+        b[1] = mathutils.Euler((-A, A, 0), 'XYZ')
+        print ("b1 =", b[1])
+
+        o[1] = mathutils.Euler((A, A, 0), 'XYZ')
+        print ("o1 =", o[1])
+
+        B = A * 2 * sqrt (2)
+        C = B + (B * sqrt (2))
+        D = C * sqrt (2)
+        E = C + D
+
+        a[0] = mathutils.Euler((-A - E + (D * 0.5), -A - (D * 0.5), 0), 'XYZ')
+        print ("a0 =", a[0])
+        mat_a[0] = Matrix.Translation(a[0])
+
+        a[3] = mathutils.Euler((0-a[0].x, 0-a[0].y, 0-a[0].z), 'XYZ')
+        print ("a3 =", a[3])
+        mat_a[3] = Matrix.Translation(a[3]) 
+
+        y[1] = mathutils.Euler((-A, -A, 0), 'XYZ')
+        print ("y1 =", y[1])
+        mat_y[1] = Matrix.Translation(y[1])
+
+### pattern A
+
+        b[2] = mathutils.Euler((a[0].x + E + (A * 2), a[0].y + (A * 2), 0), 'XYZ')
+        print ("b2 =", b[2])
+        mat_b[2] = Matrix.Translation(b[2])
+
+        b[3] = mathutils.Euler((a[0].x + E - (D * 0.5), a[0].y - (A * 2), 0), 'XYZ')
+        print ("b3 =", b[3])
+        mat_b[3] = Matrix.Translation(b[3])
+        
+        y[2] = mathutils.Euler((a[0].x + E, a[0].y, 0), 'XYZ')
+        print ("y2 =", y[2])
+        mat_y[2] = Matrix.Translation(y[2])
+
+        y[3] = mathutils.Euler((a[0].x + E - (D * 0.5), a[0].y - (D * 0.5), 0), 'XYZ')
+        print ("y3 =", y[3])
+        mat_y[3] = Matrix.Translation(y[3])
+
+        o[2] = mathutils.Euler((a[0].x + E + (A * 2), a[0].y - (A * 2), 0), 'XYZ')
+        print ("o2 =", o[2])
+        mat_o[2] = Matrix.Translation(o[2])
+        
+        o[3] = mathutils.Euler((a[0].x + E - (D * 0.5) - (A * 2), a[0].y - (D * 0.5) - (A * 2), 0), 'XYZ')
+        print ("o3 =", o[3])
+        mat_o[3] = Matrix.Translation(o[3])
+        
+### pattern A end
+
+        org_rot_mat = Matrix.Rotation(math.radians(0), 4, 'Z')
+
+        # define the rotation
+        rot_mat = Matrix.Rotation(math.radians(-45), 4, 'Z')   
+
+        for j in range(2, J - 2):
+
+            mat_y[j + 2] = mat_a[0] @ org_rot_mat @ rot_mat @ mat_a[3] @ mat_y[j]
+
+#            obj.matrix_world = mat_y[j + 2]
+            # extract components back out of the matrix
+            loc, rot, sca = mat_y[j + 2].decompose()
+            y[j + 2] = mathutils.Euler(loc, 'XYZ')
+            print("y"+str(j + 2)+" = ", y[j + 2], rot, sca)
+
+            mat_b[j + 2] = mat_a[0] @ org_rot_mat @ rot_mat @ mat_a[3] @ mat_b[j]
+                   
+#            obj.matrix_world = mat_b[j + 2]
+            # extract components back out of the matrix
+            loc, rot, sca = mat_b[j + 2].decompose()
+            b[j + 2] = mathutils.Euler(loc, 'XYZ')
+            print("b"+str(j + 2)+" = ", b[j + 2], rot, sca)
+
+            mat_o[j + 2] = mat_a[0] @ org_rot_mat @ rot_mat @ mat_a[3] @ mat_o[j]
+            
+#            obj.matrix_world = mat_o[j + 2]
+            # extract components back out of the matrix
+            loc, rot, sca = mat_o[j + 2].decompose()
+            o[j + 2] = mathutils.Euler(loc, 'XYZ')
+            print("o"+str(j + 2)+" = ", o[j + 2], rot, sca)
+ 
+        if helicity == 'right':
+            H = 1
+        else:
+            H = -1
+            
+        w[0] = mathutils.Euler((-A , y[4].y, -B * H), 'XYZ')
+        print ("w0 =", w[0])
+      
+        w[1] = mathutils.Euler((-A , y[4].y, -B*2 * H), 'XYZ')
+        print ("w1 =", w[1])
+
+        w[2] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, 0.090761/0.069978*A * H), 'XYZ')
+        w[3] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -0.178251/0.069978*A * H), 'XYZ')
+        print ("w2 =", w[2])
+        print ("w3 =", w[3])
+    
+        w[4] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -0.375753/0.069978* A * H), 'XYZ')
+        print ("w4 =", w[4])
+        w[5] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -2.92149/0.034172* A * H), 'XYZ')
+        print ("w5 =", w[5])
+        w[6] = mathutils.Euler((-0.164432/0.069978*A, -1.1257/0.069978*A, -6.08793/0.034172* A * H), 'XYZ')
+        print ("w6 =", w[6])
+
+    def constructMovement(self, J, helicity, amt, rig, a, b, y, o, w):
+
+        # Linkages
+        aa = [[0 for i in range(4)] for j in range(4)] # Link α(i) - α(j)
+        ab = [[0 for i in range(4)] for j in range(4)] # Link α(i) - β(j)
+        ya = [[0 for i in range(4)] for j in range(4)] # Link γ(i) - α(j)
+        ao = [[0 for i in range(4)] for j in range(4)] # Link α(i) - δ(j)
+        ob = [[0 for i in range(self.J)] for j in range(self.J)] # Link δ(i) - β(j)
+        yy = [[0 for i in range(self.J)] for j in range(self.J)] # Link γ(i) - γ(j)
+        by = [[0 for i in range(self.J)] for j in range(self.J)] # Link β(i) - γ(j)
+        yo = [[0 for i in range(self.J)] for j in range(self.J)] # Link γ(i) - δ(j)
+
+        rig.location = mathutils.Euler((0.0, 0.0, 0.0), 'XYZ')
+        rig.show_in_front = True
+        amt.show_names = True
+        amt.display_type = 'STICK'
+#        amt.display_type = 'BBONE'
+
+        # Link object to scene
+
+        bpy.data.collections['movement'].objects.link(rig)
+        bpy.context.view_layer.objects.active = rig
+        bpy.context.view_layer.update()
+
+        # Edit
+        bpy.ops.object.editmode_toggle()
+
+        # Construction Linkage
+        aa[2][1] = amt.edit_bones.new('a2a1')
+        aa[2][1].head = a[2]
+        aa[2][1].tail = a[1]
+        
+        ab[1][1] = amt.edit_bones.new('a1b1')
+        ab[1][1].head = a[1]
+        ab[1][1].tail = b[1]
+        ab[1][1].parent = aa[2][1]
+ 
+        by[1][1] = amt.edit_bones.new('b1y1')
+        by[1][1].head = b[1]
+        by[1][1].tail = y[1]
+        by[1][1].parent = ab[1][1]
+        by[1][1].use_inherit_rotation = False
+
+        ya[1][2] = amt.edit_bones.new('y1a2')
+        ya[1][2].head = y[1]
+        ya[1][2].tail = a[2]
+        ya[1][2].parent = by[1][1]
+
+        ao[2][1] = amt.edit_bones.new('a2o1')
+        ao[2][1].head = a[2]
+        ao[2][1].tail = o[1]
+        ao[2][1].parent = ya[1][2]
+
+        ob[1][2] = amt.edit_bones.new('o1b2')
+        ob[1][2].head = o[1]
+        ob[1][2].tail = b[2]
+        ob[1][2].parent = ao[2][1]
+        
+        yy[1][2] = amt.edit_bones.new('y1y2')
+        yy[1][2].head = y[1]
+        yy[1][2].tail = y[2]
+        yy[1][2].parent = by[1][1]
+
+        for j in range(2, J - 1):
+
+            by[j][j] = amt.edit_bones.new('b'+ str(j) + 'y'+ str(j))
+            by[j][j].head = b[j]
+            by[j][j].tail = y[j]
+            by[j][j].parent = ob[j-1][j]
+
+            yo[j][j] = amt.edit_bones.new('y'+ str(j) + 'o'+ str(j))
+            yo[j][j].head = y[j]
+            yo[j][j].tail = o[j]
+            yo[j][j].parent = yy[j-1][j]
+
+            if j < (J - 2):
+                yy[j][j+1] = amt.edit_bones.new('y'+ str(j) + 'y'+ str(j+1))
+                yy[j][j+1].head = y[j]
+                yy[j][j+1].tail = y[j+1]
+                yy[j][j+1].parent = by[j][j]
+
+                ob[j][j+1] = amt.edit_bones.new('o'+ str(j) + 'b'+ str(j+1))
+                ob[j][j+1].head = o[j]
+                ob[j][j+1].tail = b[j+1]
+                ob[j][j+1].parent = yo[j][j]
+
+
+        # y4 2 fulcrum vector
+        y4_fulcrum = amt.edit_bones.new('y4_fulcrum')
+        y4_fulcrum.head = y[4]
+        y4_fulcrum.tail = w[0]
+        y4_fulcrum.parent = yy[3][4]
+
+        y4_fulcrum_tail = amt.edit_bones.new('y4_fulcrum.tail')
+        y4_fulcrum_tail.head = w[0]
+        y4_fulcrum_tail.tail = w[1]
+        y4_fulcrum_tail.parent = y4_fulcrum
+
+
+        # formula y3y4 ginbal_ring x-axis
+        g_y3y4_x = amt.edit_bones.new('g_y3y4.x')
+        g_y3y4_x.head = y[3]
+        g_y3y4_x.tail = y[4]
+        g_y3y4_x.parent = by[3][3]
+
+        # formula y3y4 ginbal_ring z-axis
+        g_y3y4_z = amt.edit_bones.new('g_y3y4.z')
+        g_y3y4_z.head = y[4]
+        g_y3y4_z.tail = w[0]
+        g_y3y4_z.parent = g_y3y4_x
+
+        # formula b4y4 ginbal_ring x-axis
+        g_b4y4_x = amt.edit_bones.new('g_b4y4.x')
+        g_b4y4_x.head = b[4]
+        g_b4y4_x.tail = y[4]
+        g_b4y4_x.parent = ob[3][4]
+
+        # formula b4y4 ginbal_ring z-axis
+        g_b4y4_z = amt.edit_bones.new('g_b4y4.z')
+        g_b4y4_z.head = y[4]
+        g_b4y4_z.tail = w[0]
+        g_b4y4_z.parent = g_b4y4_x
+
+
+        # fulcrum 2 y4
+        fulcrum_y4 = amt.edit_bones.new('fulcrum_y4')
+        fulcrum_y4.head = w[4]
+        fulcrum_y4.tail = w[3]
+        fulcrum_y4.parent = aa[2][1]
+
+        # fulcrum y4 tail
+        fulcrum_y4_tail = amt.edit_bones.new('fulcrum_y4.tail')
+        fulcrum_y4_tail.head = w[3]
+        fulcrum_y4_tail.tail = w[2]
+        fulcrum_y4_tail.parent = fulcrum_y4
+    
+
+        # fulcrum gimbal 1 y-axis
+        g_1_y = amt.edit_bones.new('g_1.y')
+        g_1_y.head = mathutils.Euler((w[4].x, y[4].y + (0.312067-0.244966), w[4].z), 'XYZ')
+        g_1_y.tail = w[4]
+        g_1_y.parent = aa[2][1]
+
+        # fulcrum gimbal 2 x-axis
+        g_2_x = amt.edit_bones.new('g_2.x')
+        g_2_x.head = w[4]
+        g_2_x.tail = w[3]
+        g_2_x.parent = g_1_y
+    
+    
+        # wings gimbal 3 z-axis
+        g_3_z = amt.edit_bones.new('g_3.z')
+        g_3_z.head = w[4]
+        g_3_z.tail = w[5]
+        g_3_z.parent = g_2_x
+
+        # wings gimbal 4 z-axis
+        g_4_z = amt.edit_bones.new('g_4.z')
+        g_4_z.head = w[5]
+        g_4_z.tail = w[6]
+        g_4_z.parent = g_2_x
+
+        # all bones select
+
+        # Bone constraints. Armature must be in pose mode.
+        bpy.ops.object.mode_set(mode='POSE')
+
+        bpy.ops.pose.select_all(action="SELECT")
+
+        # Edit
+        bpy.ops.object.editmode_toggle()
+
+        if helicity == 'right':
+            bpy.ops.armature.calculate_roll(type='GLOBAL_POS_Z')
+        else:
+            bpy.ops.armature.calculate_roll(type='GLOBAL_NEG_Z')
+ 
+        # IK constraint
+        cns = rig.pose.bones['y1a2'].constraints.new('IK')
+        cns.name = 'Ik'
+        cns.target = rig
+        cns.subtarget = 'a2a1'
+        cns.chain_count = 2
+        cns.use_stretch = False
+
+        for j in range(2, J - 1):
+            cns = rig.pose.bones['b'+str(j) +'y'+str(j)].constraints.new('IK')
+            cns.name = 'Ik'
+            cns.target = rig
+            cns.subtarget = 'y'+str(j)+'o'+str(j)
+            cns.iterations = 500
+            cns.chain_count = 2
+            cns.use_stretch = False
+
+        # IK constraint y4 -> fulcrum
+        cns = rig.pose.bones['y4_fulcrum'].constraints.new('DAMPED_TRACK')
+        cns.name = 'Damped Track'
+        cns.target = rig
+        cns.subtarget = 'fulcrum_y4'
+        cns.head_tail = 0
+
+        # IK constraint fulcrum -> y4
+        cns = rig.pose.bones['fulcrum_y4'].constraints.new('DAMPED_TRACK')
+        cns.name = 'Damped Track'
+        cns.target = rig
+        cns.subtarget = 'y3y4'
+        cns.head_tail = 1
+
+        # IK constraint g_1.z - g_2.x - y4
+        cns = rig.pose.bones['g_2.x'].constraints.new('IK')
+        cns.name = 'Ik'
+        cns.target = rig
+        cns.subtarget = 'fulcrum_y4.tail'
+        cns.pole_target = rig
+        cns.pole_subtarget = 'fulcrum_y4'
+        cns.chain_count = 2
+        cns.use_stretch = False
+        cns.pole_angle = math.radians(-90)
+
+        # Copy rotation constraints
+        cns = rig.pose.bones['g_3.z'].constraints.new('COPY_ROTATION')
+        cns.name = 'Copy_Rotation'
+        cns.target = rig
+        cns.subtarget = 'g_y3y4.z'
+        cns.owner_space = 'WORLD'
+        cns.target_space = 'WORLD'
+
+        # Copy rotation constraints
+        cns = rig.pose.bones['g_4.z'].constraints.new('COPY_ROTATION')
+        cns.name = 'Copy_Rotation'
+        cns.target = rig
+        cns.subtarget = 'g_b4y4.z'
+        cns.owner_space = 'WORLD'
+        cns.target_space = 'WORLD'
+
+        # IK constraint
+        cns = rig.pose.bones['g_y3y4.z'].constraints.new('IK')
+        cns.name = 'Ik'
+        cns.target = rig
+        cns.subtarget = 'y4_fulcrum.tail'
+        cns.pole_target = rig
+        cns.pole_subtarget = 'y4_fulcrum'
+        cns.chain_count = 2
+        cns.use_stretch = False
+        cns.pole_angle = math.radians(90)
+
+        # IK constraint
+        cns = rig.pose.bones['g_b4y4.z'].constraints.new('IK')
+        cns.name = 'Ik'
+        cns.target = rig
+        cns.subtarget = 'y4_fulcrum.tail'
+        cns.pole_target = rig
+        cns.pole_subtarget = 'y4_fulcrum'
+        cns.chain_count = 2
+        cns.use_stretch = False
+        cns.pole_angle = math.radians(90)
+
+#        if helicity == 'right':
+#            cns.pole_angle = math.radians(90)
+#        else:
+#            cns.pole_angle = math.radians(-90)
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+
+    def configLink(self, A, J, helicity, rig, move, part):
+
+        bpy.ops.object.mode_set(mode='OBJECT')
+        
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4_fulcrum.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.cursor"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "fulcrum_y4.tail.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        Q = (0.18648+0.146446)*A
+    #   Z = -Q*2
+        Z = 0.0
+#        Z = Q*17
+
+#        obj_joint = bpy.data.objects["joint.gold.000"].copy()
+
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.gold.wing.a2a1.L"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.gold.wing.a2a1.R"].copy()
+
+        obj_joint.location = (0.0, 0.0, -Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2a1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.silver.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y1a2.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.copper.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Q*3+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a2o1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.blue.001"].copy()
+        obj_joint.location = (0.0, 0.0, -Q*2+Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "a1b1.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+
+        for n in range(1, J - 2):
+
+            if n <= (J-3):
+
+                # Pattern 2 of by
+                obj_joint = bpy.data.objects["joint.green.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "b"+str(n)+"y"+str(n)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+                # Pattern 1 of ob
+                obj_joint = bpy.data.objects["joint.blue.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q*2 + Q*(n % 2)*6 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "o"+str(n)+"b"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+            if n <= (J-4):
+
+                # Pattern 2 of yo
+                obj_joint = bpy.data.objects["joint.copper.001"].copy()
+                obj_joint.location = (0.0, 0.0, -Q + Q*((n+1) % 2)*4 +Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n+1)+"o"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+
+                # Pattern 2 of yy
+                obj_joint = bpy.data.objects["joint.gold.00"+str(1 + (n+1) % 2)].copy()
+                obj_joint.location = (0.0, 0.0, +Q*(1 - (n % 2))*2+Z)
+                obj_joint.scale = (A, A, A)
+                obj_joint.name = "y"+str(n)+"y"+str(n+1)+".mesh." + move + '.' + part +'.' + helicity
+                bpy.data.collections['link'].objects.link(obj_joint)
+                
+
+        obj_joint = bpy.data.objects["cursor.001"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y4o4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.green.b4y4.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "b4y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.gold.y3y4.R"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.gold.y3y4.L"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "y3y4.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.R"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.gold.g_y3y4.x.L"].copy()        
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.gold.g_y3y4.z.wing"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_y3y4.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.green.g_b4y4.z.wing"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_b4y4.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.green.g_b4y4.x.001"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_b4y4.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.green.g_1.y.wing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_1.y.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.blue.g_2.x.wing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+        
+        obj_joint = bpy.data.objects["joint.silver.g_3.z.wing"].copy()
+        obj_joint.location = (0.0, 0.0, 0.0)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_3.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+        obj_joint = bpy.data.objects["joint.copper.g_4.z.wing"].copy()
+        obj_joint.location = (0.0, 0.0, +Z)
+        obj_joint.scale = (A, A, A)
+        obj_joint.name = "g_4.z.mesh." + move + '.' + part +'.' + helicity
+        bpy.data.collections['link'].objects.link(obj_joint)
+
+
+        for ob in data.collections['link'].objects:
+            if "mesh" in ob.name:
+                ob.select_set(state = True, view_layer = None)
+
+        bpy.ops.object.make_single_user(type='SELECTED_OBJECTS', object=True, obdata=True, material=True, animation=True)
+        bpy.context.scene.cursor.location = (0.0, 0.0, 0.0)
+        bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
+
+    def constructLink(self, A, J, helicity, rig, move, part):
+
+        # Move and rotate the tip bone in pose mode
+        bpy.context.view_layer.objects.active = rig 
+
+        Y = 1.1838*A
+
+        for n in rig.pose.bones:
+
+            if (n.name != "y4o4") or (n.name != "y4y5"):
+#            if n.name != "o" + str(J-2) + "b" + str(J-1):
+                # we can get the object from the pose bone
+                obj = n.id_data
+                matrix_final = obj.matrix_world @ n.matrix
+
+                # Create armature and object
+                lnk = bpy.data.armatures.new(n.name[:len(n.name)]+'.data.' + helicity)
+                lnk_rig = bpy.data.objects.new(n.name[:len(n.name)]+'.link.' + helicity, lnk)
+                lnk_rig.location = mathutils.Euler((0.0, 0.0, 0.0), 'XYZ')
+
+                # rig.show_in_front = True
+                lnk.show_names = True
+                lnk.display_type = 'STICK'
+
+                bpy.data.collections['link'].objects.link(lnk_rig)
+                bpy.context.view_layer.objects.active = lnk_rig
+                bpy.context.view_layer.update()
+
+                # Create bones
+
+                # mode='EDIT'
+                bpy.ops.object.editmode_toggle()
+    
+                link = lnk.edit_bones.new(n.name[:len(n.name)])
+                link.head = (0.0, 0.0, 0.0)
+                link.tail = (0.0, Y, 0.0)
+
+                link_head = lnk.edit_bones.new('head')
+                link_head.head = (0.0, 0.0, 0.1)
+                link_head.tail = (0.0, 0.0, 0.0)
+                link_head.parent = link
+                link_head.use_inherit_scale = False
+
+                link_tail = lnk.edit_bones.new('tail')
+                link_tail.head = (0.0, Y, 0.0)
+                link_tail.tail = (0.0, Y, -0.1)
+                link_tail.parent = link
+                link_tail.use_inherit_scale = False
+
+                bpy.ops.object.mode_set(mode='OBJECT')
+
+                ob = bpy.data.objects[n.name[:len(n.name)]+'.mesh.' + move + '.' + part +'.' + helicity]
+                ob.location = mathutils.Euler((0.0, 0.0, 0.0), 'XYZ')
+    
+                # Give mesh object an armature modifier, using vertex groups but
+                # not envelopes
+                mod = ob.modifiers.new('MyRigModif', 'ARMATURE')
+                mod.object = lnk_rig
+                mod.use_bone_envelopes = False
+                mod.use_vertex_groups = True
+
+                # Bone constraints. Armature must be in pose mode.
+                bpy.ops.object.mode_set(mode='POSE')
+ 
+                # Copy rotation constraints Base -> Tip
+                pBase = lnk_rig.pose.bones[n.name[:len(n.name)]]
+                cns = pBase.constraints.new('COPY_LOCATION')
+                cns.name = 'Copy_Location'
+                cns.target = rig
+                cns.subtarget = n.name[:len(n.name)]
+                cns.owner_space = 'WORLD'
+                cns.target_space = 'WORLD'
+
+                # Copy rotation constraints Base -> Tip
+                pBase = lnk_rig.pose.bones[n.name[:len(n.name)]]
+                cns = pBase.constraints.new('COPY_ROTATION')
+                cns.name = 'Copy_Rotation'
+                cns.target = rig
+                cns.subtarget = n.name[:len(n.name)]
+                cns.owner_space = 'WORLD'
+                cns.target_space = 'WORLD'
+
+                # StretchTo constraint Mid -> Tip with influence 0.5
+                cns1 = pBase.constraints.new('STRETCH_TO')
+                cns1.name = 'Stretch'
+                cns1.target = rig
+                cns1.subtarget = n.name[:len(n.name)]
+                cns1.head_tail = 1
+                cns1.rest_length = Y
+                cns1.influence = 1
+                cns1.keep_axis = 'PLANE_Z'
+                cns1.volume = 'NO_VOLUME'
+
+                bpy.ops.object.mode_set(mode='OBJECT')
         
 
 class Spine(Formula):
@@ -3359,10 +4419,10 @@ class Spine(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(1.25*self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(1.25*self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -3596,6 +4656,81 @@ class Spine(Formula):
 class RightIlium(RightShoulder):
 
     J = 7 #joint number
+    
+    # Overriding
+    def __init__(self, P, A, move, part, helicity, start, end, 
+            disciple_loc, disciple_rot, disciple, 
+            disciple2_loc, disciple2_rot, disciple2):
+
+        global interval
+        global frame_start
+        global frame_end
+
+        self.interval = interval
+        self.frame_start = frame_start
+        self.frame_end = frame_end
+
+        # pivot factor
+        self.P = P
+
+        # scale factor
+        self.A = A 
+
+        # name
+        self.move = move
+
+        # element
+        self.part = part
+
+        # element helicity
+        self.helicity = helicity
+
+        self.start = start
+        self.end = end
+
+        # disciple position
+        self.disciple_loc = disciple_loc
+        self.disciple_rot = disciple_rot
+
+        # disciple
+        self.disciple = disciple
+        
+        # disciple position
+        self.disciple2_loc = disciple2_loc
+        self.disciple2_rot = disciple2_rot
+
+        # disciple
+        self.disciple2 = disciple2
+
+        # Create armature and object
+        self.amt = bpy.data.armatures.new(move + '.' + part + '.' + helicity + '.data')
+        self.rig = bpy.data.objects.new(move + '.' + part + '.' + helicity, self.amt)
+
+        # Joints
+        self.a = [0 for i in range(4)] # Joint α
+        self.b = [0 for i in range(self.J)] # Joint β
+        self.y = [0 for i in range(self.J)] # Joint γ
+        self.o = [0 for i in range(self.J)] # Joint δ
+
+        # Configuration Movement
+        self.configMovement(self.P, self.A, self.J, self.a, self.b, self.y, self.o)
+
+        # Construction Movement
+        self.constructMovement(self.J, self.helicity, self.amt, self.rig, self.a, self.b, self.y, self.o)
+
+        # Parent set disciple to master       
+        self.setParent(self.helicity, self.move, self.rig, 
+            self.disciple_loc, self.disciple_rot, self.disciple, 
+            self.disciple2_loc, self.disciple2_rot, self.disciple2)
+
+        # Construction Rotation
+        self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
+
+        # Configuration Linkage
+        self.configLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
+
+        # Construction Linkage
+        self.constructLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -3866,10 +5001,10 @@ class Sacrum(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.15, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A*0.3, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.15, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -4097,10 +5232,10 @@ class Thoracic(Formula):
         self.configRotation(self.rig, self.interval, self.frame_start, self.frame_end, self.start, self.end)
 
         # Configuration Linkage
-        self.configLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.configLink(self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
 
         # Construction Linkage
-        self.constructLink(self.A*0.6, self.J, self.helicity, self.rig, self.move, self.part)
+        self.constructLink(self.A*0.4, self.J, self.helicity, self.rig, self.move, self.part)
 
     # Overriding Configuration Movement
     def configMovement(self, P, A, J, a, b, y, o):
@@ -4303,13 +5438,13 @@ def formula():
 def forelegs():
 
 # scale factor
-    A = 0.104289
+    A = 0.052145
 
 # pivot factor
-    P = (-0.052145/0.104289)*A
+    P = (-0.0260725/0.052145)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
     
 # foreleg element
     part = 'foreleg-left'
@@ -4347,7 +5482,7 @@ def forewings():
     P = 0
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'forewing-left'
@@ -4396,7 +5531,7 @@ def head():
     P = (-0.182182/0.242908)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'head'
@@ -4420,7 +5555,7 @@ def neck():
     P = 0
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # neck element
     part = 'neck'
@@ -4446,7 +5581,7 @@ def shoulder():
     end = start-720
  
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
     
 # scale factor
     A = 0.070129
@@ -4463,7 +5598,8 @@ def shoulder():
     global forewing_left
     forewing = forewing_left
 
-    forewing_loc = ((0.35176/0.070129)*A, (-0.667466/0.070129)*A, (1.13416/0.070129)*A)
+#    forewing_loc = ((0.35176/0.070129)*A, (-0.667466/0.070129)*A, (1.13416/0.070129)*A)
+    forewing_loc = ((0.31726/0.070129)*A, (-0.723133/0.070129)*A, (1.16807/0.070129)*A)
     forewing_rot = mathutils.Euler((math.radians(91.197), math.radians(34.3053), math.radians(-178.592)), 'XYZ')
 
     global shoulder_left
@@ -4481,7 +5617,8 @@ def shoulder():
     global forewing_right
     forewing = forewing_right
 
-    forewing_loc = ((0.320103/0.070129)*A, (0.598447/0.070129)*A, (1.13202/0.070129)*A)
+#    forewing_loc = ((0.320103/0.070129)*A, (0.598447/0.070129)*A, (1.13202/0.070129)*A)
+    forewing_loc = ((0.288725/0.070129)*A, (0.654082/0.070129)*A, (1.16887/0.070129)*A)
     forewing_rot = mathutils.Euler((math.radians(90.7509), math.radians(34.537), math.radians(-179.065)), 'XYZ')
 
     global shoulder_right
@@ -4498,7 +5635,7 @@ def costa():
     P = (-0.122727/0.140258)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'costa'
@@ -4529,7 +5666,7 @@ def middletarsus():
     P = (-0.014019/0.031153)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'middletarsus-right'
@@ -4565,7 +5702,7 @@ def middleankles():
     P = (0.041522/0.083044)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 
 # middleankle element
@@ -4609,13 +5746,13 @@ def middleankles():
 def middlelegs():
 
 # scale factor
-    A = 0.099465
+    A = 0.049732
 
 # pivot factor
-    P = (-0.049089/0.099465)*A
+    P = (-0.0245445/0.049732)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'middleleg-left'
@@ -4629,7 +5766,7 @@ def middlelegs():
     global middleankle_left
     middleankle = middleankle_left
 
-    middleankle_loc = ((2.2029/0.099465)*A, (-0.713449/0.099465)*A, (-0.055864/0.099465)*A)
+    middleankle_loc = ((2.2029/0.049732)*A, (-0.713449/0.049732)*A, (-0.055864/0.049732)*A)
     middleankle_rot = mathutils.Euler((math.radians(-30.311), math.radians(-10.1309), math.radians(-33.553)), 'XYZ')
 
     global middleleg_left
@@ -4647,7 +5784,7 @@ def middlelegs():
     global middleankle_right
     middleankle = middleankle_right
 
-    middleankle_loc = ((2.2029/0.099465)*A, (-0.713449/0.099465)*A, (0.055864/0.099465)*A)
+    middleankle_loc = ((2.2029/0.049732)*A, (-0.713449/0.049732)*A, (0.055864/0.049732)*A)
     middleankle_rot = mathutils.Euler((math.radians(30.311), math.radians(10.1309), math.radians(-33.553)), 'XYZ')
 
     global middleleg_right
@@ -4657,13 +5794,13 @@ def middlelegs():
 def middlewings():
 
 # scale factor
-    A = 0.068344 #331.31
+    A = 0.034172 #331.31
 
 # pivot factor
     P = 0
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'middlewing-left'
@@ -4676,7 +5813,7 @@ def middlewings():
     
     global middleleg_left
 
-    middleleg_loc = ((-0.242311/0.068344)*A, (-0.720278/0.068344)*A, (0.60999/0.068344)*A) #331.51
+    middleleg_loc = ((-0.136551/0.034172)*A, (-0.411457/0.034172)*A, (0.350503/0.034172)*A) #331.51
     middleleg_rot = mathutils.Euler((math.radians(103.767), math.radians(3.03273), math.radians(-93.755)), 'XYZ')
 
     global middlewing_left
@@ -4694,7 +5831,7 @@ def middlewings():
 
     global middleleg_right
 
-    middleleg_loc = ((-0.241618/0.068344)*A, (-0.720407/0.068344)*A, (-0.610186/0.068344)*A) #331.51
+    middleleg_loc = ((-0.135858/0.034172)*A, (-0.411586/0.034172)*A, (-0.350699/0.034172)*A) #331.51
     middleleg_rot = mathutils.Euler((math.radians(-103.767), math.radians(-3.03273), math.radians(-93.755)), 'XYZ')
 
     global middlewing_right
@@ -4711,7 +5848,7 @@ def hindtarsus():
     P = (-0.018675/0.0414011)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'hindtarsus-right'
@@ -4747,7 +5884,7 @@ def hindankles():
     P = (0.053984/0.1079572)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 
 # hindankle element
@@ -4790,13 +5927,13 @@ def hindankles():
 def hindlegs():
 
 # scale factor
-    A = 0.129787
+    A = 0.064893
 
 # pivot factor
-    P = (-0.064054/0.129787)*A
+    P = (-0.032027/0.064893)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'hindleg-left'
@@ -4810,7 +5947,7 @@ def hindlegs():
     global hindankle_left
     hindankle = hindankle_left
 
-    hindankle_loc = ((2.93689/0.129787)*A, (-2.09319/0.129787)*A, (-0.07164/0.129787)*A)
+    hindankle_loc = ((2.93689/0.064893)*A, (-2.09319/0.064893)*A, (-0.07164/0.064893)*A)
     hindankle_rot = mathutils.Euler((math.radians(-30.1088), math.radians(-9.73026), math.radians(-73.318)), 'XYZ')
 
     global hindleg_left
@@ -4828,7 +5965,7 @@ def hindlegs():
     global hindankle_right
     hindankle = hindankle_right
 
-    hindankle_loc = ((2.93689/0.129787)*A, (-2.09319/0.129787)*A, (0.07164/0.129787)*A)
+    hindankle_loc = ((2.93689/0.064893)*A, (-2.09319/0.064893)*A, (0.07164/0.064893)*A)
     hindankle_rot = mathutils.Euler((math.radians(30.1088), math.radians(9.73026), math.radians(-73.318)), 'XYZ')
 
     global hindleg_right
@@ -4844,7 +5981,7 @@ def hindwings():
     P = 0
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'hindwing-left'
@@ -4881,6 +6018,44 @@ def hindwings():
     global hindwing_right
     hindwing_right = HindWing(P, A, move, part, helicity, start, end,
             hindleg_loc, hindleg_rot, hindleg_right)
+            
+            
+def wings():
+
+# scale factor
+    A = 0.034172 #911.23
+#    A = 0.2211544 # 0.276443*0.8 #294.32
+#    A = 0.1769235 # 0.2211544*0.8 #294.33
+
+# pivot factor
+    P = 0
+    
+# name
+    move = 'dungbeetle'
+
+# element
+    part = 'wing-left'
+
+# left or right
+    helicity = 'left'
+
+    start = 180
+    end = start-1440
+
+    global wing_left
+    wing_left = Wing(P, A, move, part, helicity, start, end)
+
+# element
+    part = 'wing-right'
+
+# left or right
+    helicity = 'right'
+
+    start = -180
+    end = start+1440
+
+    global wing_right
+    wing_right = Wing(P, A, move, part, helicity, start, end)
 
 
 def ilium():
@@ -4892,7 +6067,7 @@ def ilium():
     P = (-0.099344/0.10599)*A
        
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'ilium-left'
@@ -4906,18 +6081,27 @@ def ilium():
     global middlewing_left
     middlewing = middlewing_left
 
-    middlewing_loc = ((0.175843/0.10599)*A, (-1.38572/0.10599)*A, (-0.690509/0.10599)*A)
+#    middlewing_loc = ((-0.136428/0.10599)*A, (-1.11142/0.10599)*A, (-0.656781/0.10599)*A)
+    middlewing_loc = ((-0.08934/0.10599)*A, (-1.15973/0.10599)*A, (-0.676403/0.10599)*A)
     middlewing_rot = mathutils.Euler((math.radians(92.7257), math.radians(-113.976), math.radians(174.739)), 'XYZ')
 
     global hindwing_left
     hindwing = hindwing_left
 
-    hindwing_loc = ((-0.200608/0.10599)*A, (-0.578156/0.10599)*A, (-1.98864/0.10599)*A)
+#    hindwing_loc = ((-0.200608/0.10599)*A, (-0.578156/0.10599)*A, (-1.98864/0.10599)*A)
+    hindwing_loc = ((-0.130526/0.10599)*A, (-0.635771/0.10599)*A, (-1.97529/0.10599)*A)
     hindwing_rot = mathutils.Euler((math.radians(-86.4762), math.radians(-36.8136), math.radians(-8.748)), 'XYZ')
+
+#    global wing_left
+#    wing = wing_left
+
+#    wing_loc = ((0.755968/0.10599)*A, (-1.23667/0.10599)*A, (-0.612139/0.10599)*A)
+#    wing_rot = mathutils.Euler((math.radians(-90), math.radians(-30.8426), math.radians(-180)), 'XYZ')
 
     global ilium_left
     ilium_left = LeftIlium(P, A, move, part, helicity, start, end, middlewing_loc, middlewing_rot, middlewing,
         hindwing_loc, hindwing_rot, hindwing)
+#        hindwing_loc, hindwing_rot, hindwing, wing_loc, wing_rot, wing)
 
 # element
     part = 'ilium-right'
@@ -4925,18 +6109,27 @@ def ilium():
     global middlewing_right
     middlewing = middlewing_right
 
-    middlewing_loc = ((0.217842/0.10599)*A, (1.08498/0.10599)*A, (-0.674356/0.10599)*A)
+#    middlewing_loc = ((-0.120107/0.10599)*A, (0.841941/0.10599)*A, (-0.649628/0.10599)*A)
+    middlewing_loc = ((-0.06861/0.10599)*A, (0.886033/0.10599)*A, (-0.668353/0.10599)*A)
     middlewing_rot = mathutils.Euler((math.radians(92.205), math.radians(-113.98), math.radians(175.071)), 'XYZ')
     
     global hindwing_right
     hindwing = hindwing_right
 
-    hindwing_loc = ((-0.171159/0.10599)*A, (0.316169/0.10599)*A, (-1.98114/0.10599)*A)
+#    hindwing_loc = ((-0.171159/0.10599)*A, (0.316169/0.10599)*A, (-1.98114/0.10599)*A)
+    hindwing_loc = ((-0.094838/0.10599)*A, (0.364804/0.10599)*A, (-1.96635/0.10599)*A)
     hindwing_rot = mathutils.Euler((math.radians(88.4955), math.radians(-143.094), math.radians(180.827)), 'XYZ')
+
+#    global wing_right
+#    wing = wing_right
+
+#    wing_loc = ((0.744498/0.10599)*A, (1.01002/0.10599)*A, (-0.610289/0.10599)*A)
+#    wing_rot = mathutils.Euler((math.radians(90), math.radians(-149.223), math.radians(0.0)), 'XYZ')
 
     global ilium_right
     ilium_right = RightIlium(P, A, move, part, helicity, start, end, middlewing_loc, middlewing_rot, middlewing,
         hindwing_loc, hindwing_rot, hindwing)
+#        hindwing_loc, hindwing_rot, hindwing, wing_loc, wing_rot, wing)
 
 
 def sacrum():
@@ -4948,7 +6141,7 @@ def sacrum():
     P = (-0.11751/0.134297)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'sacrum'
@@ -4979,7 +6172,7 @@ def spine():
     P = (-0.178805/0.187969)*A
     
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'spine'
@@ -5013,7 +6206,7 @@ def thoracic():
     P = (-0.070847/0.07557)*A
 
 # name
-    move = 'gait-dungbeetle'
+    move = 'dungbeetle'
 
 # element
     part = 'thoracic'
@@ -5078,6 +6271,7 @@ def main(origin):
     hindankles()
     hindlegs()
     hindwings()
+#    wings()
     ilium()
     sacrum()
     spine()
