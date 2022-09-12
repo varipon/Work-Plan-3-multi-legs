@@ -1545,7 +1545,7 @@ class ForeWing(Formula):
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
-        
+
         obj_joint = bpy.data.objects["joint.silver.g_3.z.forewing"].copy()
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
@@ -4230,18 +4230,25 @@ class Wing(ForeWing):
         obj_joint.name = "g_2.x.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
         
-        obj_joint = bpy.data.objects["joint.silver.g_3.z.wing"].copy()
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.silver.g_3.z.wing.R"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.silver.g_3.z.wing.L"].copy()
+
         obj_joint.location = (0.0, 0.0, 0.0)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_3.z.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
 
-        obj_joint = bpy.data.objects["joint.copper.g_4.z.wing"].copy()
+        if helicity == 'right':
+            obj_joint = bpy.data.objects["joint.copper.g_4.z.wing.R"].copy()
+        else:
+            obj_joint = bpy.data.objects["joint.copper.g_4.z.wing.L"].copy()
+
         obj_joint.location = (0.0, 0.0, +Z)
         obj_joint.scale = (A, A, A)
         obj_joint.name = "g_4.z.mesh." + move + '.' + part +'.' + helicity
         bpy.data.collections['link'].objects.link(obj_joint)
-
 
         for ob in data.collections['link'].objects:
             if "mesh" in ob.name:
