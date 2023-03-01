@@ -4000,9 +4000,7 @@ class HindWing(ForeWing):
         bpy.ops.object.origin_set(type='ORIGIN_CURSOR')
         
         
-
-                
-
+        
 def main_formula():
 
 # pivot factor
@@ -4243,18 +4241,8 @@ def main_0_spine():
     spine = Spine0(P, A, move, part, helicity, start, end,
         costa_loc, costa_rot, costa, sacrum_loc, sacrum_rot, sacrum)
 
-#    spine_loc = (0, (-0.429924/(0.187969*0.497446))*A, (2.17601/(0.187969*0.497446))*A)
-#    spine_rot = mathutils.Euler((math.radians(90), math.radians(-45), math.radians(90)), 'XYZ')
 
-    # position
-#    spine.rig.location.x += spine_loc[0]
-#    spine.rig.location.y += spine_loc[1]
-#    spine.rig.location.z += spine_loc[2]
-
-#    spine.rig.rotation_euler = spine_rot
-
-
-def main_forelegs():
+def main_forelegs(body_phase, phase_delay, phase_z):
 
 # scale factor
     A = 0.104289*0.174
@@ -4290,7 +4278,7 @@ def main_forelegs():
     foreleg_right = Leg(P, A, move, part, helicity, start, end)
 
 
-def main_forewings():
+def main_forewings(body_phase, phase_delay, phase_z, segment):
 
 # scale factor
     A = 0.034172*0.35
@@ -4316,8 +4304,6 @@ def main_forewings():
     foreleg_rot = mathutils.Euler((math.radians(94.8354), math.radians(35.5812), math.radians(-130.788)), 'XYZ')
 
     global forewing_left
-
-    global segment
     
     if segment == 6:
         forewing_left = ForeWing(P, A, move, part, helicity, start, end,
@@ -4350,7 +4336,7 @@ def main_forewings():
                 foreleg_loc, foreleg_rot, foreleg_right)
 
 
-def main_hindlegs():
+def main_hindlegs(body_phase, phase_delay, phase_z):
 
 # scale factor
     A = 0.104289*0.174
@@ -4386,7 +4372,7 @@ def main_hindlegs():
     hindleg_right = Leg(P, A, move, part, helicity, start, end)
 
 
-def main_hindwings():
+def main_hindwings(body_phase, phase_delay, phase_z):
 
 # scale factor
     A = 0.034172*0.35
@@ -4434,60 +4420,7 @@ def main_hindwings():
             hindleg_loc, hindleg_rot, hindleg_right)
 
 
-def main_head():
-
-# scale factor
-    A = 0.242908
-
-# pivot factor
-    P = (-0.182182/0.242908)*A
-    
-# name
-    move = 'gait-millipede'+body_phase
-
-# element
-    part = 'head'
-
-# left or right
-    helicity = 'left'
-
-    start = 180+phase_delay
-    end = start-1440
-
-    global head
-    head = Head(P, A, move, part, helicity, start, end)
-
-
-def main_neck():
-    
-# scale factor
-    A = 0.114004
-    
-# pivot factor
-    P = 0
-
-# name
-    move = 'gait-millipede'+body_phase
-
-# neck element
-    part = 'neck'
-
-# helicity
-    helicity = 'left'
-
-    start = 0
-    end = start
-
-    head_loc = ((-0.143993/0.114004)*A, (-0.164966/0.114004)*A, (0.221022/0.114004)*A)
-    head_rot = mathutils.Euler((math.radians(68.0883), math.radians(95.3065), math.radians(171.009)), 'XYZ')
-
-    global head
-    
-    global neck
-    neck = Neck(P, A, move, part, helicity, start, end, head_loc, head_rot, head)
-
-
-def main_shoulder():
+def main_shoulder(body_phase, phase_delay, phase_z, segment):
 
     forewing_loc_right_list = [
         [0.222782, 0.411688, 0.060997],
@@ -4603,7 +4536,7 @@ def main_shoulder():
         forewing_loc, forewing_rot, forewing, hindwing_loc, hindwing_rot, hindwing)
 
 
-def main_costa():
+def main_costa(body_phase, phase_delay, phase_distance, phase_z):
 
 # scale factor
     A = 0.0490903
@@ -4643,7 +4576,7 @@ def main_costa():
     costa.rig.rotation_euler = costa_rot
     
     
-def main_1_costa():
+def main_1_costa(body_phase, phase_delay, phase_distance, phase_z):
 
 # scale factor
     A = 0.0490903
@@ -4708,13 +4641,7 @@ def main(origin):
     interval = frame_end - frame_start
 
     #    main_formula()
-
-    global body_phase
-    global phase_delay
-    global phase_distance
-    global phase_z
-    global segment
-    
+ 
     n = 0
 
     main_0_head()
@@ -4733,13 +4660,15 @@ def main(origin):
     phase_z = 1.26467 - 0.062354*n
     segment = 0
     
-    main_forelegs()
-    main_forewings()
-    main_hindlegs()
-    main_hindwings()
-    main_shoulder()
-    main_1_costa()
-     
+    main_forelegs(body_phase, phase_delay, phase_z)
+    main_forewings(body_phase, phase_delay, phase_z, segment)
+    main_hindlegs(body_phase, phase_delay, phase_z)
+    main_hindwings(body_phase, phase_delay, phase_z)
+    main_shoulder(body_phase, phase_delay, phase_z, segment)
+    main_1_costa(body_phase, phase_delay, phase_distance, phase_z)
+
+### part 1
+
     for n in range(1, 4):
 
         body_phase = '.'+str(n)
@@ -4748,46 +4677,46 @@ def main(origin):
         phase_z = 1.26467 - 0.062354*n
         segment = 0
     
-        main_forelegs()
-        main_forewings()
-        main_hindlegs()
-        main_hindwings()
-        main_shoulder()
-        main_costa()
-
-### part 1
-
-    for n in range(4, 11):
-
-        body_phase = '.'+str(n)
-        phase_delay = 36*n
-        phase_distance = 0.372*n
-        phase_z = 1.01524 - 0.053116*(n - 4)
-        segment = (n - 4)
-    
-        main_forelegs()
-        main_forewings()
-        main_hindlegs()
-        main_hindwings()
-        main_shoulder()
-        main_costa()
+        main_forelegs(body_phase, phase_delay, phase_z)
+        main_forewings(body_phase, phase_delay, phase_z, segment)
+        main_hindlegs(body_phase, phase_delay, phase_z)
+        main_hindwings(body_phase, phase_delay, phase_z)
+        main_shoulder(body_phase, phase_delay, phase_z, segment)
+        main_costa(body_phase, phase_delay, phase_distance, phase_z)
 
 ### part 2
 
-    for n in range(11, 17):
+#    for n in range(4, 11):
 
-        body_phase = '.'+str(n)
-        phase_delay = 36*n
-        phase_distance = 0.372*n
-        phase_z = 1.01524 - 0.053116*6
-        segment = 6
+#        body_phase = '.'+str(n)
+#        phase_delay = 36*n
+#        phase_distance = 0.372*n
+#        phase_z = 1.01524 - 0.053116*(n - 4)
+#        segment = (n - 4)
     
-        main_forelegs()
-        main_forewings()
-        main_hindlegs()
-        main_hindwings()
-        main_shoulder()
-        main_costa()
+#        main_forelegs(body_phase, phase_delay, phase_z)
+#        main_forewings(body_phase, phase_delay, phase_z, segment)
+#        main_hindlegs(body_phase, phase_delay, phase_z)
+#        main_hindwings(body_phase, phase_delay, phase_z)
+#        main_shoulder(body_phase, phase_delay, phase_z, segment)
+#        main_costa(body_phase, phase_delay, phase_distance, phase_z)
+
+### part 3
+
+#    for n in range(11, 17):
+
+#        body_phase = '.'+str(n)
+#        phase_delay = 36*n
+#        phase_distance = 0.372*n
+#        phase_z = 1.01524 - 0.053116*6
+#        segment = 6
+    
+#        main_forelegs(body_phase, phase_delay, phase_z)
+#        main_forewings(body_phase, phase_delay, phase_z, segment)
+#        main_hindlegs(body_phase, phase_delay, phase_z)
+#        main_hindwings(body_phase, phase_delay, phase_z)
+#        main_shoulder(body_phase, phase_delay, phase_z, segment)
+#        main_costa(body_phase, phase_delay, phase_distance, phase_z)
 
 if __name__ == "__main__":
     # renaming of corrada objects
@@ -4796,4 +4725,3 @@ if __name__ == "__main__":
 #            ob.name = ob.name.replace("_", ".")
 
     main((0.0, 0.0, 0.0))
-    
